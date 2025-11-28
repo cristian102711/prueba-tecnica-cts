@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Node / Frontend
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker / Environment
+.env
+postgres_data/
+celerybeat-schedule
+
+# OS
+.DS_Store
+Thumbs.db
