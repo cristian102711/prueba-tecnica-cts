@@ -11,6 +11,7 @@ class Participante(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
+    telefono = models.CharField(max_length=20, default="")
     # Token único para verificar el correo
     token_verificacion = models.UUIDField(default=uuid.uuid4, editable=False)
     estado = models.CharField(max_length=20, choices=ESTADOS, default='PENDIENTE')

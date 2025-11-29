@@ -4,14 +4,14 @@ from .models import Participante
 class ParticipanteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Participante
-        fields = ['id', 'nombre', 'apellido', 'email', 'estado', 'fecha_registro']
+        fields = ['id', 'nombre', 'apellido', 'email', 'telefono', 'estado', 'fecha_registro']
         # Protegemos campos sensibles
         read_only_fields = ['id', 'estado', 'fecha_registro']
 
 class RegistroSerializer(serializers.ModelSerializer):
     class Meta:
         model = Participante
-        fields = ['nombre', 'apellido', 'email']
+        fields = ['nombre', 'apellido', 'email', 'telefono']
 
 class VerificacionSerializer(serializers.Serializer):
     token = serializers.UUIDField()

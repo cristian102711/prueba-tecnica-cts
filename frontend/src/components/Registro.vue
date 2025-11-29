@@ -13,7 +13,7 @@ const registrar = async () => {
     // Conectamos directo al backend en el puerto 8000
     await axios.post('http://localhost:8000/api/participantes/registro/', form.value)
     mensaje.value = '¡Registro recibido! Revisa tu correo para verificar la cuenta.'
-    form.value = { nombre: '', apellido: '', email: '' }
+    form.value = { nombre: '', apellido: '', email: '', telefono: '' }
   } catch (e) {
     error.value = e.response?.data?.email ? 'El correo ya está registrado.' : 'Error en el servidor'
   }
@@ -26,6 +26,7 @@ const registrar = async () => {
     <form @submit.prevent="registrar">
       <input v-model="form.nombre" placeholder="Nombre" required />
       <input v-model="form.apellido" placeholder="Apellido" required />
+      <input v-model="form.telefono" type="tel" placeholder="Teléfono" required />
       <input v-model="form.email" type="email" placeholder="Correo Electrónico" required />
       <button type="submit">Registrarme</button>
     </form>

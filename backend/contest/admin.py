@@ -9,7 +9,7 @@ from .tasks import seleccionar_ganador_task
 @admin.register(Participante)
 class ParticipanteAdmin(admin.ModelAdmin):
     # Esto cumple con "Listado de concursantes" [cite: 49]
-    list_display = ('email', 'nombre', 'apellido', 'estado', 'fecha_registro')
+    list_display = ('email', 'nombre', 'apellido', 'telefono', 'estado', 'fecha_registro')
     
     # Esto cumple con "Búsqueda y filtrado opcional" [cite: 50]
     list_filter = ('estado',)
